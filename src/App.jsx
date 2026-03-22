@@ -39,6 +39,10 @@ function App() {
 
         {/* Вітрина товарів */}
         <section className="lg:col-span-2">
+          {/* Новий заголовок для виправлення ієрархії */}
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+            <span className="text-indigo-500">🕹️</span> Каталог товарів
+          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {PRODUCTS.map(p => (
@@ -48,6 +52,7 @@ function App() {
                 <p className="text-slate-400 mb-4 font-mono">{formatCurrency(p.price)}</p>
                 <button
                   onClick={() => addToCart(p)}
+                  aria-label={`Купити ${p.name}`}
                   className="w-full bg-indigo-600 hover:bg-indigo-500 py-3 rounded-xl font-bold transition-all text-white"
                 >
                   КУПИТИ
@@ -62,7 +67,8 @@ function App() {
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">🛒 Твоє замовлення</h2>
 
           {cart.length === 0 ? (
-            <p className="text-slate-600 italic text-center py-8">Кошик порожній...</p>
+            // Новий контраст: text-slate-400 замість 600
+            <p className="text-slate-400 italic text-center py-8">Кошик порожній...</p>
           ) : (
             <div className="space-y-4">
               {cart.map(item => (
