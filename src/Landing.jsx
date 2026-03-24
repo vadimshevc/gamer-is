@@ -18,7 +18,10 @@ const Landing = ({ onStart }) => {
         { icon: "🔥", title: "Cloud Data", desc: "Firebase Firestore NoSQL" },
         { icon: "⚛️", title: "Frontend UI", desc: "React + Tailwind CSS" }
       ],
-      btn: "Відкрити Проєкт"
+      btn: "Відкрити Проєкт",
+      methodology: "Методологія: Використання компонентного підходу React для UI та сервісів Firebase для обробки даних у реальному часі.",
+      researchObject: "Об'єкт дослідження: Процеси автоматизації обліку товарів та взаємодії з клієнтами в ігровій індустрії.",
+      university: "Сумський державний університет"
     },
     EN: {
       topic: "Gamer Store Information System",
@@ -34,7 +37,10 @@ const Landing = ({ onStart }) => {
         { icon: "🔥", title: "Cloud Data", desc: "Firebase Firestore NoSQL" },
         { icon: "⚛️", title: "Frontend UI", desc: "React + Tailwind CSS" }
       ],
-      btn: "Launch Project"
+      btn: "Launch Project",
+      methodology: "Methodology: Using React component-based UI and Firebase services for real-time data processing.",
+      researchObject: "Research Object: Automation of inventory accounting and customer interaction in the gaming industry.",
+      university: "Sumy State University"
     }
   };
 
@@ -98,6 +104,27 @@ const Landing = ({ onStart }) => {
                 <p className="text-xs text-slate-500 leading-relaxed font-medium uppercase tracking-wider">{card.desc}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section aria-label="Методологія та Об'єкт" className="grid md:grid-cols-2 gap-8 mb-32">
+          <div className="p-8 bg-[#111319] rounded-3xl border border-white/5">
+            <h3 className="text-indigo-500 font-bold mb-4 uppercase text-xs tracking-widest">// {lang === 'UA' ? 'Об\'єкт дослідження' : 'Research Object'}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">{t.researchObject}</p>
+            {/* Placeholder для фото об'єкта */}
+            <div className="mt-6 aspect-video bg-[#0a0b10] rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-slate-600 text-xs">
+              [ Фото / Графік системи ]
+            </div>
+          </div>
+          
+          <div className="p-8 bg-[#111319] rounded-3xl border border-white/5">
+            <h3 className="text-indigo-500 font-bold mb-4 uppercase text-xs tracking-widest">// {lang === 'UA' ? 'Методологія' : 'Methodology'}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">{t.methodology}</p>
+            {/* Placeholder для логотипу університету */}
+            <div className="mt-6 h-20 bg-white/5 rounded-xl flex items-center justify-center gap-3">
+              <span className="text-2xl opacity-50">🏛️</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider opacity-50">{t.university}</span>
+            </div>
           </div>
         </section>
 
