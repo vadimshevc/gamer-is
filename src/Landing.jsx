@@ -95,5 +95,4 @@ const Landing = ({ onStart }) => {
     </div>
   );
 };
-
 export default Landing;
