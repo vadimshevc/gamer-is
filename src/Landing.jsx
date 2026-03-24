@@ -47,7 +47,7 @@ const Landing = ({ onStart }) => {
   const t = content[lang];
 
   return (
-    <div className="min-h-screen bg-[#0a0b10] text-slate-300 font-sans selection:bg-indigo-500/30">
+    <div className="min-h-screen bg-[#0a0b10] scroll-smooth text-slate-300 font-sans selection:bg-indigo-500/30">
       {/* Header із вказанням ролі banner */}
       <header role="banner" className="border-b border-white/5 bg-[#0a0b10]/80 backdrop-blur-md sticky top-0 z-50">
         <nav role="navigation" aria-label={t.navLabel} className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
