@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
 
+/**
+ * Компонент презентаційної сторінки (Лендінгу).
+ * @component
+ * @param {Object} props - Властивості компонента.
+ * @param {Function} props.onStart - Функція, що викликається при натисканні на кнопку "Відкрити проєкт".
+ */
+
 const Landing = ({ onStart }) => {
   const [lang, setLang] = useState('UA');
 
