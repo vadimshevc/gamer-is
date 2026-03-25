@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: GamerIS API Specification
+  description: Специфікація API для взаємодії між React-фронтендом та Google Sheets через Google Apps Script.
+  version: 1.0.0
+
+servers:
+  - url: https://script.google.com/macros/s/ВАШ_ID/exec
+    description: Google Apps Script Web App
+
+paths:
+  /exec:
+    get:
+      summary: Отримання списку геймерських товарів
+      parameters:
+        - name: action
+          in: query
+          required: true
+          schema:
+            type: string
+            example: getItems
+      responses:
+        '200':
+          description: Успішне отримання даних
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id: { type: integer }
+                    name: { type: string }
+                    price: { type: number }
+                    category: { type: string }
