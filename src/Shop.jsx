@@ -6,13 +6,11 @@ const PRODUCTS = [
   { id: 2, name: "Razer DeathAdder V3", price: 3200, stock: 10, img: "🖱️" },
   { id: 3, name: "Samsung Odyssey G7", price: 24500, stock: 5, img: "🖥️" },
 ];
-
 /**
  * Основний компонент магазину.
  * Відображає каталог товарів та інтерфейс взаємодії з користувачем.
  * @returns {React.JSX.Element} Компонент магазину.
  */
-
 function App() {
   const [cart, setCart] = useState([]);
 
