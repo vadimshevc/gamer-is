@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 /**
  * Компонент презентаційної сторінки (Лендінгу).
- * * @param {object} props - Властивості компонента.
+ * @param {object} props - Властивості компонента.
  * @param {() => void} props.onStart - Функція, що викликається при натисканні на кнопку.
  * @returns {React.JSX.Element} Повертає візуальну структуру лендінгу.
  */
