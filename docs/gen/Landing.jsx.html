@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: Landing.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: Landing.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
+
+/**
+ * Компонент презентаційної сторінки (Лендінгу).
+ * @component
+ * @param {Object} props - Властивості компонента.
+ * @param {Function} props.onStart - Функція, що викликається при натисканні на кнопку "Відкрити проєкт".
+ */
+
+const Landing = ({ onStart }) => {
+  const [lang, setLang] = useState('UA');
+
+  const content = {
+    UA: {
+      topic: "Інформаційна система геймерського магазину",
+      description: "Трирівнева архітектура: Google Sheets → Firebase → React",
+      goal: "Мета: Автоматизація обліку та продажів через безсерверну хмарну інфраструктуру та AI.",
+      archTitle: "Технічна архітектура",
+      navLabel: "Головна навігація",
+      langBtnLabel: "Змінити мову на англійську",
+      mainRole: "Основний вміст",
+      cards: [
+        { icon: "📑", title: "Admin Panel", desc: "Google Sheets (Low-Code)" },
+        { icon: "⚙️", title: "Middleware", desc: "Apps Script + Gemini AI" },
+        { icon: "🔥", title: "Cloud Data", desc: "Firebase Firestore NoSQL" },
+        { icon: "⚛️", title: "Frontend UI", desc: "React + Tailwind CSS" }
+      ],
+      btn: "Відкрити Проєкт",
+      methodology: "Методологія: Використання компонентного підходу React для UI та сервісів Firebase для обробки даних у реальному часі.",
+      researchObject: "Об'єкт дослідження: Процеси автоматизації обліку товарів та взаємодії з клієнтами в ігровій індустрії.",
+      university: "Сумський державний університет"
+    },
+    EN: {
+      topic: "Gamer Store Information System",
+      description: "3-Tier Architecture: Google Sheets → Firebase → React",
+      goal: "Goal: Automation of accounting and sales via serverless cloud and AI.",
+      archTitle: "Technical Architecture",
+      navLabel: "Main navigation",
+      langBtnLabel: "Change language to Ukrainian",
+      mainRole: "Main content",
+      cards: [
+        { icon: "📑", title: "Admin Panel", desc: "Google Sheets (Low-Code)" },
+        { icon: "⚙️", title: "Middleware", desc: "Apps Script + Gemini AI" },
+        { icon: "🔥", title: "Cloud Data", desc: "Firebase Firestore NoSQL" },
+        { icon: "⚛️", title: "Frontend UI", desc: "React + Tailwind CSS" }
+      ],
+      btn: "Launch Project",
+      methodology: "Methodology: Using React component-based UI and Firebase services for real-time data processing.",
+      researchObject: "Research Object: Automation of inventory accounting and customer interaction in the gaming industry.",
+      university: "Sumy State University"
+    }
+  };
+
+  const t = content[lang];
+
+  return (
+    &lt;div className="min-h-screen bg-[#0a0b10] scroll-smooth text-slate-300 font-sans selection:bg-indigo-500/30">
+      {/* Header із вказанням ролі banner */}
+      &lt;header role="banner" className="border-b border-white/5 bg-[#0a0b10]/80 backdrop-blur-md sticky top-0 z-50">
+        &lt;nav role="navigation" aria-label={t.navLabel} className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          &lt;h1 className="font-black text-xl text-white italic tracking-tighter">
+            GamerIS &lt;span className="text-indigo-500 underline decoration-indigo-500 underline-offset-4">PRO&lt;/span>
+          &lt;/h1>
+          &lt;button 
+            onClick={() => setLang(lang === 'UA' ? 'EN' : 'UA')}
+            aria-label={t.langBtnLabel}
+            className="text-[10px] font-black border border-indigo-500/50 px-4 py-1.5 rounded-full text-indigo-400 hover:bg-indigo-600 hover:text-white transition-all tracking-widest"
+          >
+            {lang} VERSION
+          &lt;/button>
+        &lt;/nav>
+      &lt;/header>
+
+      {/* Main із вказанням ролі main */}
+      &lt;main role="main" aria-label={t.mainRole} className="max-w-6xl mx-auto px-6 py-20">
+        
+        {/* Hero Section із зв'язком через aria-labelledby */}
+        &lt;section aria-labelledby="hero-heading" className="text-center mb-32">
+          &lt;div className="inline-block px-4 py-1 mb-8 text-[10px] font-black tracking-[0.3em] text-indigo-400 uppercase bg-indigo-950/20 border border-indigo-900/50 rounded-full">
+            Bachelor Thesis Project // 2026
+          &lt;/div>
+          &lt;h2 id="hero-heading" className="text-5xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
+            {t.topic}
+          &lt;/h2>
+          &lt;p className="text-xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed italic">{t.goal}&lt;/p>
+          &lt;button 
+            onClick={onStart}
+            aria-label={lang === 'UA' ? "Запустити інформаційну систему" : "Start information system"}
+            className="group relative bg-indigo-600 text-white px-12 py-6 rounded-2xl font-black text-xl shadow-[0_0_40px_-5px_rgba(79,70,229,0.5)] hover:bg-indigo-500 transition-all duration-300 hover:-translate-y-1"
+          >
+            {t.btn}
+            &lt;span aria-hidden="true" className="inline-block ml-3 group-hover:translate-x-1 transition-transform">→&lt;/span>
+          &lt;/button>
+        &lt;/section>
+
+        {/* Architecture Grid із семантичною назвою */}
+        &lt;section aria-label={t.archTitle}>
+          &lt;h3 id="arch-title" className="text-center text-xs font-black uppercase tracking-[0.5em] text-slate-600 mb-12">
+            {t.archTitle}
+          &lt;/h3>
+          &lt;div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-32">
+            {t.cards.map((card, i) => (
+              &lt;article 
+                key={i} 
+                className="bg-[#111319] p-8 rounded-[2rem] border border-white/5 hover:border-indigo-500/40 transition-all group"
+              >
+                &lt;div aria-hidden="true" className="text-5xl mb-6 bg-[#0a0b10] w-16 h-16 flex items-center justify-center rounded-2xl border border-white/5 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(79,70,229,0.2)] transition-all">
+                  {card.icon}
+                &lt;/div>
+                &lt;h4 className="text-white font-bold mb-2 tracking-tight">{card.title}&lt;/h4>
+                &lt;p className="text-xs text-slate-500 leading-relaxed font-medium uppercase tracking-wider">{card.desc}&lt;/p>
+              &lt;/article>
+            ))}
+          &lt;/div>
+        &lt;/section>
+
+        &lt;section aria-label="Методологія та Об'єкт" className="grid md:grid-cols-2 gap-8 mb-32">
+          &lt;div className="p-8 bg-[#111319] rounded-3xl border border-white/5">
+            &lt;h3 className="text-indigo-500 font-bold mb-4 uppercase text-xs tracking-widest">// {lang === 'UA' ? 'Об\'єкт дослідження' : 'Research Object'}&lt;/h3>
+            &lt;p className="text-slate-400 text-sm leading-relaxed">{t.researchObject}&lt;/p>
+            {/* Placeholder для фото об'єкта */}
+            &lt;div className="mt-6 aspect-video bg-[#0a0b10] rounded-xl border border-dashed border-slate-700 flex items-center justify-center text-slate-600 text-xs">
+              [ Фото / Графік системи ]
+            &lt;/div>
+          &lt;/div>
+          
+          &lt;div className="p-8 bg-[#111319] rounded-3xl border border-white/5">
+            &lt;h3 className="text-indigo-500 font-bold mb-4 uppercase text-xs tracking-widest">// {lang === 'UA' ? 'Методологія' : 'Methodology'}&lt;/h3>
+            &lt;p className="text-slate-400 text-sm leading-relaxed">{t.methodology}&lt;/p>
+            {/* Placeholder для логотипу університету */}
+            &lt;div className="mt-6 h-20 bg-white/5 rounded-xl flex items-center justify-center gap-3">
+              &lt;span className="text-2xl opacity-50">🏛️&lt;/span>
+              &lt;span className="text-[10px] font-bold uppercase tracking-wider opacity-50">{t.university}&lt;/span>
+            &lt;/div>
+          &lt;/div>
+        &lt;/section>
+
+        {/* Technical Footer як допоміжна інформація */}
+        &lt;section role="complementary" aria-label="Технічні деталі" className="bg-indigo-950/10 border border-indigo-500/10 p-10 rounded-[2.5rem] text-center">
+            &lt;p className="text-sm font-medium italic text-slate-500">
+               {lang === 'UA' ? "Стек: React 18, Vite, Tailwind CSS, Vitest, Google Apps Script, Firebase Firestore." 
+               : "Stack: React 18, Vite, Tailwind CSS, Vitest, Google Apps Script, Firebase Firestore."}
+            &lt;/p>
+        &lt;/section>
+      &lt;/main>
+
+      {/* Footer із вказанням ролі contentinfo */}
+      &lt;footer role="contentinfo" className="py-12 text-center border-t border-white/5">
+        &lt;p className="text-[10px] text-slate-600 font-black uppercase tracking-[0.5em]">
+          Vadym Shevchenko | 2026
+        &lt;/p>
+      &lt;/footer>
+    &lt;/div>
+  );
+};
+
+export default Landing;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#Landing">Landing</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Wed Mar 25 2026 18:11:26 GMT+0200 (Восточная Европа, стандартное время)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

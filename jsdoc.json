@@ -1,0 +1,12 @@
+{
+    "source": {
+        "include": ["src"],
+        "includePattern": ".+\\.jsx?$",
+        "excludePattern": "(^|\\/|\\\\)_"
+    },
+    "opts": {
+        "destination": "./docs/gen",
+        "recurse": true,
+        "template": "templates/default"
+    }
+}

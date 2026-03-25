@@ -7,7 +7,7 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 export default defineConfig([
   
   {
-    ignores: ['dist', 'node_modules', 'coverage', 'public', 'vite.config.js', 'eslint.config.js'],
+    ignores: ['dist', 'node_modules', 'coverage', 'public', 'vite.config.js', 'eslint.config.js', 'docs/gen/**'],
   },
   
   {
