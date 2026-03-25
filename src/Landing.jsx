@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 /**
  * Компонент презентаційної сторінки (Лендінгу).
- * @component
- * @param {Object} props - Властивості компонента.
- * @param {Function} props.onStart - Функція, що викликається при натисканні на кнопку "Відкрити проєкт".
+ * * @param {object} props - Властивості компонента.
+ * @param {() => void} props.onStart - Функція, що викликається при натисканні на кнопку.
+ * @returns {React.JSX.Element} Повертає візуальну структуру лендінгу.
  */
 
 const Landing = ({ onStart }) => {
