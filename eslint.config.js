@@ -5,8 +5,13 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  
   {
+    ignores: ['dist', 'node_modules', 'coverage', 'public', 'vite.config.js', 'eslint.config.js'],
+  },
+  
+  {
+    
     files: ['**/*.{js,jsx}'],
     extends: [
       js.configs.recommended,
@@ -23,7 +28,13 @@ export default defineConfig([
       },
     },
     rules: {
+      // існуюче правило
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      
+      // НОВІ ПРАВИЛА:
+      'prefer-const': 'error',    // Помилка, якщо змінна не змінюється, але оголошена через let
+      'no-console': 'error',      // Попередження при використанні console.log
+      'no-debugger': 'error',    // Заборона забутих дебаггерів
     },
   },
 ])

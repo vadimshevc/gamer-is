@@ -1,0 +1,16 @@
+
+> gamer-is@0.0.0 lint
+> eslint .
+
+
+C:\Users\shevc\Documents\DiplomProject\gamer-is\src\App.jsx
+  6:8   error  'showShop' is never reassigned. Use 'const' instead     prefer-const
+  6:18  error  'setShowShop' is never reassigned. Use 'const' instead  prefer-const
+
+C:\Users\shevc\Documents\DiplomProject\gamer-is\src\Shop.jsx
+   3:10  error  'useEffect' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+  21:9   error  Unexpected console statement                                                      no-console
+
+✖ 4 problems (4 errors, 0 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+
