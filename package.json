@@ -16,6 +16,7 @@
   "homepage": "https://vadimshevc.github.io/gamer-is",
   "dependencies": {
     "22": "^0.0.0",
+    "firebase": "^12.12.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
